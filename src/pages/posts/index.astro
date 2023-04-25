@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import Layout, { name } from "../../layouts/Layout.astro";
+
+const allPosts = await getCollection("web");
+---
+
+<Layout title={name + " | Posts"} description="📂 Junseong Park's Website'">
+  <h1 class="text-5xl">Posts Page</h1>
+  <ul>
+    {
+      allPosts.map((post) => {
+        return (
+          <li>
+            <a href={`/posts/${post.slug}`}>{post.slug}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import { getEntryBySlug } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const entry = await getEntryBySlug("web", slug);
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const {
+  Content,
+  remarkPluginFrontmatter: { title, tags },
+} = await entry.render();
+---
+
+<PostLayout title={title} description={title}>
+  <h1 class="text-3xl">Tags</h1>
+  <ul>
+    {tags.map((tag: string) => <li>{tag}</li>)}
+  </ul>
+  <h1 class="text-2xl">Content</h1>
+  <Content />
+</PostLayout>
