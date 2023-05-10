@@ -1,6 +1,6 @@
 ---
 title: My First Markdown Post
-tags: [Astro, Markdown]
+tag: Astro
 ---
 
 # Heading 1

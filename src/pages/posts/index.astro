@@ -1,12 +1,15 @@
 ---
+import Layout from "@/layouts/Layout.astro";
+import { defaultDescription, name } from "@/metadata";
 import { getCollection } from "astro:content";
-import Layout, { name } from "../../layouts/Layout.astro";
 
 const allPosts = await getCollection("web");
 ---
 
-<Layout title={name + " | Posts"} description="📂 Junseong Park's Website'">
-  <h1 class="text-5xl">Posts Page</h1>
+<Layout
+  title={name + " | Front-End Developer"}
+  description={defaultDescription}
+>
   <ul>
     {
       allPosts.map((post) => {

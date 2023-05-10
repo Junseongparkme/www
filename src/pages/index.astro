@@ -1,10 +1,27 @@
 ---
-import Layout, { name } from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import { defaultDescription, name } from "@/metadata";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("web");
 ---
 
-<Layout title={name + " | Home"} description="📂 Junseong Park's Website'">
-  <main>
-    <h1>Main Page</h1>
-    <a href="/posts">Posts</a>
-  </main>
+<Layout
+  title={name + " | Front-End Developer"}
+  description={defaultDescription}
+>
+  <h1>{name}</h1>
+  <p>{defaultDescription}</p>
+  <h1 class="text-5xl">Posts Page</h1>
+  <ul>
+    {
+      allPosts.map((post) => {
+        return (
+          <li>
+            <a href={`/posts/${post.slug}`}>{post.slug}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
 </Layout>

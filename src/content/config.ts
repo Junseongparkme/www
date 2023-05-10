@@ -1,11 +1,12 @@
+import { email, name } from "@/metadata";
 import { z, defineCollection } from "astro:content";
 
 const webCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    tags: z.array(z.string()),
-    author: z.string().default("Junseong Park"),
-    authorContact: z.string().email().default("junseongpark.dev@gmail.com"),
+    tag: z.string(),
+    author: z.string().default(name),
+    authorContact: z.string().email().default(email),
     image: z
       .object({
         src: z.string(),

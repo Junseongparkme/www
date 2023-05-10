@@ -1,12 +1,12 @@
 ---
+import { name, twitterId, url } from "@/metadata";
+
 export interface Props {
   title: string;
   description: string;
 }
 
 const { title, description } = Astro.props;
-
-export const name = "Junseong Park";
 ---
 
 <!DOCTYPE html>
@@ -25,13 +25,13 @@ export const name = "Junseong Park";
     <!-- Open Graph -->
     <meta property="og:title" content={name} />
     <meta property="og:site_name" content={name} />
-    <meta property="og:url" content="https://junseongpark.me" />
+    <meta property="og:url" content={url} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={name} />
-    <meta name="twitter:site" content="@junseongparkme" />
+    <meta name="twitter:site" content={twitterId} />
     <meta name="twitter:description" content={description} />
     <title>{title}</title>
     <!-- Google tag (gtag.js) -->
@@ -50,6 +50,8 @@ export const name = "Junseong Park";
     </script>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

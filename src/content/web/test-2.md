@@ -1,6 +1,6 @@
 ---
 title: My Second Markdown Post
-tags: [React, Markdown]
+tag: React
 ---
 
 # Hello World
