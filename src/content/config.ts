@@ -7,12 +7,6 @@ const webCollection = defineCollection({
     tag: z.string(),
     author: z.string().default(name),
     authorContact: z.string().email().default(email),
-    image: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
   }),
 });
 
