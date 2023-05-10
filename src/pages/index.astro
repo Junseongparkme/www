@@ -1,4 +1,5 @@
 ---
+import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
 import { defaultDescription, name } from "@/metadata";
 import { getCollection } from "astro:content";
@@ -10,15 +11,29 @@ const allPosts = await getCollection("web");
   title={name + " | Front-End Developer"}
   description={defaultDescription}
 >
-  <h1>{name}</h1>
-  <p>{defaultDescription}</p>
-  <h1 class="text-5xl">Posts Page</h1>
-  <ul>
+  <h1 class="text-4xl font-bold pb-2">{name}</h1>
+  <ul class="pb-4 flex space-x-3 text-sm">
+    <li>
+      <a href="https://github.com/junseongparkme" target="_blank">Github</a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/junseongparkme" target="_blank"
+        >Linkedin</a
+      >
+    </li>
+    <li>
+      <a href="https://twitter.com/junseongparkme" target="_blank">Twitter</a>
+    </li>
+  </ul>
+  <p class="pb-6">{defaultDescription}</p>
+  <ul class="flex flex-col space-y-3">
     {
       allPosts.map((post) => {
         return (
           <li>
-            <a href={`/posts/${post.slug}`}>{post.slug}</a>
+            <a href={`/posts/${post.slug}`}>
+              <Card slug={post.slug} />
+            </a>
           </li>
         );
       })
