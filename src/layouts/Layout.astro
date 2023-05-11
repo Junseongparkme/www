@@ -10,7 +10,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="ko-KR" class="tablet:text-[32px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,7 +56,9 @@ const { title, description } = Astro.props;
     </script>
   </head>
   <body class="bg-blue-950 text-blue-50">
-    <main class="w-[360px] mobile:w-full tablet:w-[768px] mx-auto px-10 py-20">
+    <main
+      class="w-[360px] mobile:w-full tablet:w-[768px] mx-auto px-10 py-20 tablet:py-10 min-h-screen"
+    >
       <slot />
     </main>
   </body>

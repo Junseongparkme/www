@@ -14,15 +14,28 @@ const allPosts = await getCollection("web");
   <h1 class="text-4xl font-bold pb-2">{name}</h1>
   <ul class="pb-4 flex space-x-3 text-sm">
     <li>
-      <a href="https://github.com/junseongparkme" target="_blank">Github</a>
+      <a
+        href="https://github.com/junseongparkme"
+        target="_blank"
+        class="hover:text-blue-100 active:text-blue-200 transition-colors"
+        >Github</a
+      >
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/junseongparkme" target="_blank"
+      <a
+        href="https://www.linkedin.com/in/junseongparkme"
+        target="_blank"
+        class="hover:text-blue-100 active:text-blue-200 transition-colors"
         >Linkedin</a
       >
     </li>
     <li>
-      <a href="https://twitter.com/junseongparkme" target="_blank">Twitter</a>
+      <a
+        href="https://twitter.com/junseongparkme"
+        target="_blank"
+        class="hover:text-blue-100 active:text-blue-200 transition-colors"
+        >Twitter</a
+      >
     </li>
   </ul>
   <p class="pb-6">{defaultDescription}</p>

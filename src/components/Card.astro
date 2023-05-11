@@ -2,6 +2,8 @@
 const { slug } = Astro.props;
 ---
 
-<section class="bg-blue-900 p-5 rounded-xl">
+<section
+  class="bg-blue-900 hover:bg-blue-800 active:bg-blue-700 transition-colors p-5 rounded-xl"
+>
   {slug}
 </section>
