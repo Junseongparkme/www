@@ -1,6 +1,8 @@
 ---
 title: My Second Markdown Post
-tag: React
+category: React
+description: This is my second markdown post.
+image: "/assets/react.png"
 ---
 
 # Hello World

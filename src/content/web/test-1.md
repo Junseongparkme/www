@@ -1,6 +1,8 @@
 ---
 title: My First Markdown Post
-tag: Astro
+category: Astro
+description: This is my first markdown post.
+image: "/assets/astro.jpeg"
 ---
 
 # Heading 1

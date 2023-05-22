@@ -1,4 +1,6 @@
 ---
+import Container from "@/components/Container.astro";
+import Header from "@/components/Header.astro";
 import { name, twitterId, url } from "@/metadata";
 
 export interface Props {
@@ -10,7 +12,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en-US" class="tablet:text-[32px]">
+<html lang="en-US" class="text-3xl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +21,7 @@ const { title, description } = Astro.props;
     <meta name="author" content={name} />
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#172554" />
+    <meta name="theme-color" content="#FFF" />
     <meta name="generator" content={Astro.generator} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -55,11 +57,10 @@ const { title, description } = Astro.props;
       gtag("config", "G-RYGJ1C37SZ");
     </script>
   </head>
-  <body class="bg-blue-950 text-blue-50">
-    <main
-      class="w-[360px] mobile:w-full tablet:w-[768px] mx-auto px-10 py-20 tablet:py-10 min-h-screen"
-    >
+  <body class="bg-white text-black">
+    <Header />
+    <Container>
       <slot />
-    </main>
+    </Container>
   </body>
 </html>

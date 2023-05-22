@@ -17,18 +17,16 @@ if (entry === undefined) {
 
 const {
   Content,
-  remarkPluginFrontmatter: { title, tag },
+  remarkPluginFrontmatter: { title, category },
 } = await entry.render();
 ---
 
 <Layout title={`${title} | ${url.slice(8)}`} description={defaultDescription}>
-  <section>
-    <p class="text-sm pb-2">{tag}</p>
+  <section class="pt-6 border-b">
+    <span class="text-sm bg-red-300 px-2 py-0.5 rounded-full">{category}</span>
     <h1 class="text-4xl font-bold pb-4">{title}</h1>
   </section>
-  <article
-    class="prose prose-headings:text-blue-50 prose-headings:my-4 prose-p:text-blue-50"
-  >
+  <article class="prose pt-6 pb-12">
     <Content />
   </article>
 </Layout>
