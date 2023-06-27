@@ -10,13 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^6.5.1",
     "@astrojs/partytown": "^1.2.3",
     "@astrojs/react": "^2.2.1",
     "@astrojs/tailwind": "^4.0.0",
-    "@astrojs/vercel": "^3.5.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "@vercel/analytics": "^1.0.1",
     "astro": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

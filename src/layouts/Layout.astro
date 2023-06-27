@@ -2,7 +2,6 @@
 import Container from "@/components/Container.astro";
 import Header from "@/components/Header.astro";
 import { name, twitterId, url } from "@/metadata";
-import { inject } from "@vercel/analytics";
 
 export interface Props {
   title: string;
@@ -10,8 +9,6 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
-
-inject();
 ---
 
 <!DOCTYPE html>
