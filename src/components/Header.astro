@@ -1,46 +1,18 @@
 ---
-import { getCollection } from "astro:content";
-import Container from "./Container.astro";
 import { name } from "@/metadata";
-
-const allPosts = await getCollection("web");
-const allCategories = allPosts.map((post) => post.data.category);
 ---
 
-<header class="bg-white text-black sticky top-0 border-b z-10">
-  <Container>
-    <nav class="flex justify-between max-tablet:justify-center">
-      <div class="flex items-center">
-        <h1 class="text-center">
-          <a class="font-extrabold py-3" href="/">{name}</a>
-        </h1>
-      </div>
-      <div class="flex text-xs gap-3 items-center max-tablet:hidden">
-        <a class="py-3" href="https://github.com/junseongparkme" target="_blank"
-          >Github</a
-        >
-        <a
-          class="py-3"
-          href="https://twitter.com/junseongparkme"
-          target="_blank">Twitter</a
-        >
-        <div class="cursor-pointer relative group py-3">
-          <span>Categories</span>
-          <div
-            class="absolute bg-yellow-400 py-1 px-4 rounded-md top-8 hidden group-hover:block"
-          >
-            <ul class="flex flex-col gap-1">
-              {
-                allCategories.map((category) => (
-                  <a href={`/category/${category.toLocaleLowerCase()}`}>
-                    <li>{category}</li>
-                  </a>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </Container>
+<header class="sticky top-0 z-10 px-6 py-12">
+  <nav class="flex justify-between max-w-[600px] mx-auto">
+    <div id="logo" class="flex items-center">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/favicon-32x32.png" alt="logo" />
+        <span class="font-extrabold">{name}</span>
+      </a>
+    </div>
+    <div id="sns" class="mobile:flex text-sm gap-4 items-center hidden">
+      <a href="https://github.com/junseongparkme" target="_blank">Github</a>
+      <a href="https://twitter.com/junseongparkme" target="_blank">Twitter</a>
+    </div>
+  </nav>
 </header>

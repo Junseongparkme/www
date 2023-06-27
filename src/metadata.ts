@@ -1,6 +1,6 @@
 export const name = "Junseong Park";
 export const twitterId = "@junseongparkme";
-export const email = "admin@junseongpark.dev";
+export const email = "junseongpark.dev@gmail.com";
 export const url = "https://junseongpark.dev";
 export const defaultDescription =
-  "Welcome to my website where I document what I've learned to become a better web front-end developer.";
+  "I am Junseong Park. I am interested in web development using the React ecosystem and design that provides good UX.";

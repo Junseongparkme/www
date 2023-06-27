@@ -1,5 +1,4 @@
 ---
-import Container from "@/components/Container.astro";
 import Header from "@/components/Header.astro";
 import { name, twitterId, url } from "@/metadata";
 
@@ -12,7 +11,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en-US" class="text-3xl">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,17 +59,15 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#121212" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
-    <!-- Open Graph -->
+    <meta name="theme-color" content="#121212" />
     <meta property="og:title" content={name} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={name} />
     <meta property="og:url" content={url} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/favicon-96x96.png" />
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={name} />
     <meta name="twitter:site" content={twitterId} />
@@ -79,10 +76,26 @@ const { title, description } = Astro.props;
     <meta name="twitter:image:alt" content="Junseong Park's website logo" />
     <title>{title}</title>
   </head>
-  <body class="bg-white text-black">
+  <body class="bg-black text-white">
     <Header />
-    <Container>
-      <slot />
-    </Container>
+    <div
+      id="container"
+      class="max-w-[1000px] mx-auto flex gap-3 mobile:flex-row flex-col"
+    >
+      <aside id="sidebar" class="w-[150px] p-6">
+        <ul class="flex mobile:flex-col gap-3 flex-row">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+        </ul>
+      </aside>
+      <main class="max-w-[600px] p-6"><slot /></main>
+    </div>
   </body>
 </html>

@@ -22,11 +22,8 @@ const {
 ---
 
 <Layout title={`${title} | ${url.slice(8)}`} description={defaultDescription}>
-  <section class="pt-6 border-b">
-    <span class="text-sm bg-red-300 px-2 py-0.5 rounded-full">{category}</span>
-    <h1 class="text-4xl font-bold pb-4">{title}</h1>
-  </section>
-  <article class="prose pt-6 pb-12">
+  <h1 class="text-4xl font-bold pb-4">{title}</h1>
+  <article class="prose prose-headings:text-white prose-p:text-white">
     <Content />
   </article>
 </Layout>
