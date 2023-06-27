@@ -78,33 +78,6 @@ const { title, description } = Astro.props;
     <meta name="twitter:image" content="/favicon-96x96.png" />
     <meta name="twitter:image:alt" content="Junseong Park's website logo" />
     <title>{title}</title>
-    <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-DVMYSN4MQC"></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-DVMYSN4MQC");
-    </script>
-    <script type="text/partytown">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "hg6gi4jsv8");
-    </script>
   </head>
   <body class="bg-white text-black">
     <Header />
