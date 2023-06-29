@@ -10,20 +10,5 @@ module.exports = {
     screens: {
       mobile: "540px",
     },
-    extend: {
-      keyframes: {
-        "fade-in": {
-          from: {
-            opacity: 0,
-          },
-          "50%": {
-            opacity: 0.5,
-          },
-          to: {
-            opacity: 1,
-          },
-        },
-      },
-    },
   },
 };
