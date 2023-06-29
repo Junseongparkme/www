@@ -99,3 +99,18 @@ const { title, description } = Astro.props;
     </div>
   </body>
 </html>
+
+<style>
+  body {
+    animation: fadeIn 0.75s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
